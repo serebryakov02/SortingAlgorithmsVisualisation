@@ -3,6 +3,7 @@
 #include <QPainter>
 #include <algorithm> // swap() C++11
 #include <QTimer>
+#include <QElapsedTimer>
 
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
@@ -37,13 +38,9 @@ void Widget::bubbleSort()
 
 void Widget::activateBubbleSort()
 {
-    elapsedTimer.start();
     bubbleSortPressed = true;
     i = j = 0;
     bubbleSort();
-    qint64 elapsed = elapsedTimer.nsecsElapsed(); // Get the elapsed time in nanoseconds
-    qreal elapsedMs = static_cast<qreal>(elapsed) / 1000000; // Convert nanoseconds to milliseconds
-    qDebug() << "Execution time: " << elapsedMs << " ms";
 }
 
 void Widget::selectionSort()
@@ -341,8 +338,6 @@ void Widget::performSortStep()
             isSorted = false;
         }
     }
-
-    qDebug() << "copyBars: " << copyBars;
 }
 
 void Widget::on_horizontalSlider_valueChanged(int value)
@@ -358,11 +353,6 @@ void Widget::on_horizontalSlider_valueChanged(int value)
     }
 
     update();
-}
-
-void Widget::setCopyBars(const QVector<size_t> &newCopyBars)
-{
-    copyBars = newCopyBars;
 }
 
 QVector<size_t> &Widget::getBars()

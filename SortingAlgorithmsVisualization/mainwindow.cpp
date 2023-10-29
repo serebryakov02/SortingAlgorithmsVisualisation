@@ -72,8 +72,6 @@ void MainWindow::specialSlot(int value)
         widgetBars->getBars().push_back(static_cast<size_t>(rand() % 600 + 1));
     }
 
-    widgetBars->setCopyBars(widgetBars->getBars());
-
     widgetBars->update();
 }
 

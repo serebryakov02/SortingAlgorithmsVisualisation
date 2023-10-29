@@ -81,8 +81,6 @@ private:
 
     QColor selectedColor;
     QColor backgroundColor;
-
-    QElapsedTimer elapsedTimer;
 };
 
 #endif // WIDGET_H
