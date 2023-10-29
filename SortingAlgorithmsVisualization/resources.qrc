@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/programming.png</file>
+        <file>images/Bubble-Sort--Flowchart-.png</file>
+    </qresource>
+</RCC>
